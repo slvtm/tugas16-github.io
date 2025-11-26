@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowd Review - THE MUSIC FEST</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-bg: #111111;
+            --dark-card: #1e1e1e;
+            --neon-pink: #ff3366;
+            --neon-blue: #00ffff;
+            --text-light: #f0f0f0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--dark-bg) !important;
+            border-bottom: 1px solid var(--neon-pink);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--text-light) !important;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+        .nav-link.active {
+            color: var(--neon-pink) !important;
+            border-bottom: 2px solid var(--neon-pink);
+        }
+        .btn-neon {
+            background-color: var(--neon-pink);
+            border-color: var(--neon-pink);
+            color: var(--dark-bg);
+            font-weight: bold;
+            box-shadow: 0 0 10px var(--neon-pink);
+            transition: all 0.3s;
+        }
+
+        /* Header dan Judul */
+        .review-header {
+            background-color: var(--dark-card);
+            border-bottom: 5px solid var(--neon-blue);
+            padding: 3rem 0;
+        }
+        .review-header h1 {
+            color: var(--neon-pink);
+            font-family: 'Teko', sans-serif;
+            font-size: 4.5rem;
+        }
+        
+        /* Filter Tiket */
+        .filter-buttons .btn {
+            background-color: #333333;
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+            margin: 5px;
+            font-weight: bold;
+        }
+        .filter-buttons .btn.active, .filter-buttons .btn:hover {
+            background-color: var(--neon-blue);
+            color: var(--dark-bg);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Review Card */
+        .review-card {
+            background-color: var(--dark-card);
+            border: 2px solid var(--neon-pink);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(255, 51, 102, 0.4);
+            border-left: 5px solid var(--neon-pink); /* Aksen neon */
+        }
+        .review-text {
+            font-style: italic;
+            border-left: 2px solid var(--neon-blue);
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        .reviewer-info {
+            color: var(--neon-blue);
+            font-weight: bold;
+        }
+        .star-rating i {
+            color: gold;
+            text-shadow: 0 0 5px orange;
+        }
+        .ticket-badge {
+            background-color: var(--neon-blue);
+            color: var(--dark-bg);
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-2 text-white" href="index.html" style="color: var(--neon-pink) !important; text-shadow: 0 0 5px var(--neon-pink);">
+                THE MUSIC FEST
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME STAGE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="katalog.html">LINEUP</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">VENUE</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="testi.html">CROWD REVIEW</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">INFO TIKET</a></li>
+                </ul>
+            </div>
+            <div class="d-flex">
+                <button class="btn btn-outline-light me-2" type="button" title="Cari Review"
+                        onclick="alert('Fitur Pencarian Review aktif.')">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="checkout.html" class="btn btn-neon position-relative" title="Keranjang Tiket">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                        <span class="visually-hidden">items in cart</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <header class="review-header text-center">
+            <div class="container">
+                <h1 class="fw-bold">WHAT THE CROWD SAYS</h1>
+                <p class="lead text-white-50">Lebih dari 1000 review jujur dari penonton di seluruh kategori tiket.</p>
+                
+                <div class="filter-buttons mt-4">
+                    <button class="btn active" data-filter="all">SEMUA REVIEW (1024)</button>
+                    <button class="btn" data-filter="platinum">PLATINUM (50)</button>
+                    <button class="btn" data-filter="vip">VIP PASS (150)</button>
+                    <button class="btn" data-filter="frontrow">FRONT ROW (200)</button>
+                    <button class="btn" data-filter="ga">GENERAL ADMISSION (624)</button>
+                </div>
+            </div>
+        </header>
+
+        <section id="reviews" class="container my-5">
+            <div class="row g-4" id="review-list">
+                
+                <div class="col-lg-6 review-item platinum">
+                    <div class="review-card h-100">
+                        <span class="badge rounded-pill ticket-badge mb-3">ALL ACCESS PLATINUM</span>
+                        <div class="star-rating mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="review-text text-white">"Pengalaman terbaik seumur hidup. Layanan concierge sangat membantu, dan Meet & Greet dengan semua headliner berjalan santai. Worth every penny!"</p>
+                        <p class="reviewer-info mb-0">Raja T. (Verified Buyer)</p>
+                        <small class="text-muted">Dibeli 2 bulan lalu</small>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 review-item vip">
+                    <div class="review-card h-100">
+                        <span class="badge rounded-pill ticket-badge mb-3" style="background-color: var(--neon-pink); color: var(--dark-bg);">VIP BACKSTAGE PASS</span>
+                        <div class="star-rating mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <p class="review-text text-white">"Akses lounge-nya nyaman, tidak terlalu ramai. Bisa istirahat sebelum lanjut nonton. Sayang view dari lounge agak terbatas, tapi *overall* mantap!"</p>
+                        <p class="reviewer-info mb-0">Lita K. (Verified Buyer)</p>
+                        <small class="text-muted">Dibeli 1 bulan lalu</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 review-item ga">
+                    <div class="review-card h-100">
+                        <span class="badge rounded-pill ticket-badge mb-3" style="background-color: #999999; color: var(--dark-bg);">GENERAL ADMISSION</span>
+                        <div class="star-rating mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                        <p class="review-text text-white">"Sangat murah untuk 3 hari! *Sound system*-nya bagus, tapi antrian toilet dan F&B sangat panjang di jam sibuk. Lain kali saya akan coba VIP!"</p>
+                        <p class="reviewer-info mb-0">Bagas D. (Verified Buyer)</p>
+                        <small class="text-muted">Dibeli 3 bulan lalu</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 review-item frontrow">
+                    <div class="review-card h-100">
+                        <span class="badge rounded-pill ticket-badge mb-3" style="background-color: var(--neon-pink); color: var(--dark-bg);">FRONT ROW SEAT</span>
+                        <div class="star-rating mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="review-text text-white">"Tempat duduknya benar-benar di depan, terasa seperti bandnya tampil hanya untuk kita. Momen terbaik di panggung utama! Wajib coba!"</p>
+                        <p class="reviewer-info mb-0">Dian N. (Verified Buyer)</p>
+                        <small class="text-muted">Dibeli 2 bulan lalu</small>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 review-item ga">
+                    <div class="review-card h-100">
+                        <span class="badge rounded-pill ticket-badge mb-3" style="background-color: #999999; color: var(--dark-bg);">GENERAL ADMISSION</span>
+                        <div class="star-rating mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                        <p class="review-text text-white">"Cukup puas dengan harga segini. Pengalaman festival yang sangat worth it. Tolong tambah lineup band indie lokal lagi ya!"</p>
+                        <p class="reviewer-info mb-0">Fahmi Z. (Verified Buyer)</p>
+                        <small class="text-muted">Dibeli 1 bulan lalu</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-4">
+                <button class="btn btn-outline-light btn-lg" style="border-color: var(--neon-blue); color: var(--neon-blue);" onclick="alert('Memuat 50 Review Selanjutnya...')">
+                    Muat Lebih Banyak Review <i class="fas fa-sync-alt ms-2"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-pink);">THE MUSIC FEST</h5>
+                    <p class="small text-white me-3">Your definitive music concert. Where quality and high-energy sound meet.</p>
+                    <div class="d-flex social-icons mt-3">
+                        <a href="#" class="me-3" onclick="alert('Membuka Facebook Event')"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka Instagram Event')"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka Twitter Event')"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka YouTube Channel')"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-blue);">Event Info</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="tentang.html" class="text-white me-3">Venue Info</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Karir')">Staff & Crew</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Blog')">After Party Blog</a></li>
+                        <li><a href="kontak.html" class="text-white me-3">Hotline</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-pink);">Ticket Policy</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Kebijakan Pengiriman')">Merchandise Shipping</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Pengembalian')">Refund Policy</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman FAQ')">FAQ</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Syarat & Ketentuan')">T&C</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-blue);">Payment Gate</h5>
+                    <p class="small text-white me-3">Semua transaksi dijamin aman dan terenkripsi.</p>
+                    <div class="mt-3">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-3 border-top border-secondary mt-3">
+                <p class="mb-0 small text-muted">&copy; 2024 THE MUSIC FEST. All Rights Reserved. Powered by Electric Vibes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-buttons .btn');
+            const reviewList = document.getElementById('review-list');
+            const reviewItems = document.querySelectorAll('.review-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    reviewItems.forEach(item => {
+                        const categories = item.classList;
+                        
+                        if (filter === 'all' || categories.contains(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

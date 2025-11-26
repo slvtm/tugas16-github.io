@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MUSIC FEST - Lineup & Tickets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-bg: #111111;
+            --dark-card: #1e1e1e;
+            --neon-pink: #ff3366;
+            --neon-blue: #00ffff;
+            --text-light: #f0f0f0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--dark-bg) !important;
+            border-bottom: 1px solid var(--neon-pink);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--text-light) !important;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--neon-pink) !important;
+        }
+        .btn-neon {
+            background-color: var(--neon-pink);
+            border-color: var(--neon-pink);
+            color: var(--dark-bg);
+            font-weight: bold;
+            box-shadow: 0 0 10px var(--neon-pink);
+            transition: all 0.3s;
+        }
+        .btn-neon:hover {
+            background-color: #ff6699;
+            border-color: #ff6699;
+            box-shadow: 0 0 15px #ff6699;
+        }
+
+        /* Hero (Panggung Utama) - STATIC VERSION */
+        .hero-static {
+            height: 85vh; 
+            min-height: 480px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid var(--neon-blue);
+            /* Menggunakan gambar slide pertama sebagai latar belakang utama */
+            background-image: url('https://image.slidesharecdn.com/fashionshowpresentation-141123014757-conversion-gate01/85/fashion-show-presentation-4-320.jpg');
+        }
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 3rem;
+            border-radius: 10px;
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+        .hero-content h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 4.5rem;
+            color: var(--neon-blue);
+        }
+        .hero-content p {
+            color: var(--text-light);
+        }
+
+        /* Product Card (Lineup) */
+        .product-card {
+            background-color: var(--dark-card);
+            border: 2px solid var(--neon-pink);
+            box-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+            transition: all 0.3s ease-in-out;
+            border-radius: 8px;
+        }
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px var(--neon-blue), 0 0 5px var(--neon-pink);
+            border-color: var(--neon-blue);
+        }
+        .product-card .card-title {
+            color: var(--neon-blue);
+            font-family: 'Teko', sans-serif;
+            font-size: 1.8rem;
+        }
+        .product-card .card-text {
+            color: var(--neon-pink);
+        }
+        .card-img-top {
+            border-bottom: 1px dashed var(--text-light);
+        }
+
+        /* Testimonial (Crowd Review) - STATIC CARD */
+        .testimonial-card {
+            background-color: var(--dark-card);
+            border: 1px solid var(--neon-blue);
+            margin-bottom: 20px; /* Tambahkan jarak antar kartu di tata letak grid */
+        }
+        .testimonial-text { 
+            color: var(--neon-pink); 
+            font-family: 'Roboto Mono', monospace; 
+        }
+        .star-rating i {
+            color: gold;
+            text-shadow: 0 0 5px orange;
+        }
+        
+        /* Footer/Kontak */
+        footer {
+            background-color: var(--dark-bg);
+            border-top: 3px solid var(--neon-pink);
+        }
+        footer a {
+            color: var(--neon-blue) !important;
+        }
+        footer a:hover {
+            color: var(--neon-pink) !important;
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+        .list-unstyled a {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-2 text-white" href="index.html" style="color: var(--neon-pink) !important; text-shadow: 0 0 5px var(--neon-pink);">
+                THE MUSIC FEST
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">HOME STAGE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="katalog.html">LINEUP</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">VENUE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testi.html">CROWD REVIEW</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">INFO TIKET</a></li>
+                </ul>
+            </div>
+            <div class="d-flex">
+                <button class="btn btn-outline-light me-2" type="button" title="Cari Merchandise"
+                        onclick="alert('Mencari LINEUP/MERCHANDISE. Silakan integrasikan dengan backend.')">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="checkout.html" class="btn btn-neon position-relative" title="Keranjang Merchandise">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                        <span class="visually-hidden">items in cart</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="home" class="hero-static d-flex align-items-center justify-content-center mb-5">
+            <div class="text-center text-white p-4 hero-content">
+                <h1 class="fw-bold animate_animated animate_fadeInDown">HEADLINER STAGE - SUMMER EDITION</h1>
+                <p class="lead fw-bold" style="color: var(--neon-pink);">TIKET PRESALE DISKON HINGGA 50%!</p>
+                <a href="katalog.html" class="btn btn-neon btn-lg mt-3 fw-bold">DAPATKAN TIKET</a>
+            </div>
+        </section>
+        <section id="koleksi" class="container my-5 py-3">
+            <h2 class="text-center mb-5 fw-bold" style="color: var(--neon-blue); font-family: 'Teko', sans-serif; letter-spacing: 3px;">🎶 LINEUP MUSIC UTAMA</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100 product-card">
+                        
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">GENERAL ADMISSION</h5>
+                            <p class="text-muted small">Akses ke semua Stage non-VIP.</p>
+                            <div class="star-rating mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (12 Review)
+                            </div>
+                            <p class="card-text fw-bold fs-3" style="color: var(--neon-pink);">Rp 99.000 (SALE!)</p>
+                            <a href="product-detail.html" class="btn btn-neon w-100"><i class="fas fa-ticket-alt me-2"></i> Get Ticket</a> </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 product-card">
+                        
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">VIP BACKSTAGE PASS</h5>
+                            <p class="text-muted small">Akses ke Lounge & Meet & Greet.</p>
+                            <div class="star-rating mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (25 Review)
+                            </div>
+                            <p class="card-text fw-bold fs-3" style="color: var(--neon-blue);">Rp 245.000</p>
+                            <a href="product-detail.html" class="btn btn-neon w-100"><i class="fas fa-ticket-alt me-2"></i> Get Ticket</a> </div>
+                    </div>
+                </div>
+                   <div class="col">
+                    <div class="card h-100 product-card">
+                        
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">FRONT ROW SEAT</h5>
+                            <p class="text-muted small">Kursi terbaik di Stage Utama.</p>
+                            <div class="star-rating mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> (5 Review)
+                            </div>
+                            <p class="card-text fw-bold fs-3" style="color: var(--neon-blue);">Rp 195.000</p>
+                            <a href="product-detail.html" class="btn btn-neon w-100"><i class="fas fa-ticket-alt me-2"></i> Get Ticket</a> </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 product-card">
+                        
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">ALL ACCESS PLATINUM</h5>
+                            <p class="text-muted small">Semua akses termasuk Private Party.</p>
+                            <div class="star-rating mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (18 Review)
+                            </div>
+                            <p class="card-text fw-bold fs-3" style="color: var(--neon-pink);">Rp 310.000 (VIP)</p>
+                            <a href="product-detail.html" class="btn btn-neon w-100"><i class="fas fa-ticket-alt me-2"></i> Get Ticket</a> </div>
+                    </div>
+                </div>
+                </div>
+            <div class="text-center mt-5">
+                <a href="katalog.html" class="btn btn-outline-light btn-lg" style="border-color: var(--neon-blue); color: var(--neon-blue);">
+                    Lihat Seluruh Lineup <i class="fas fa-compact-disc ms-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <hr style="border-top: 2px dashed var(--neon-pink);" class="my-5">
+
+        <section id="tentang" class="container my-5 py-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="fw-bold display-5 mb-4" style="color: var(--neon-pink); font-family: 'Teko', sans-serif;">🎤 THE VENUE: PESAN TIKET</h2>
+                    <p class="lead" style="color: var(--neon-blue);">Didirikan pada 2015, THE MUSIC FEST adalah panggung untuk musik live premium yang terjangkau. Kami bukan hanya menjual tiket, tapi kurator pengalaman suara otentik.</p>
+                    <p class="text-white">Fokus kami adalah pada kualitas sound system, lineup orisinal, dan mendukung artis lokal. Setiap tiket adalah 'pass' yang unik menuju vibe Anda. Bergabunglah dengan ribuan crowd di komunitas kami.</p>
+                    <a href="tentang.html" class="btn btn-neon btn-lg mt-3">LIHAT INFO VENUE</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="ratio ratio-16x9 border border-3 border-light rounded shadow-lg" style="border-color: var(--neon-blue) !important;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white-50">
+                            <img 
+                            width="700px"; 
+                            height="355px";
+                            src="https://i.pinimg.com/736x/17/97/d8/1797d84380d165155e294dc56c4532d1.jpg" alt="gambar konser">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border-top: 2px dashed var(--neon-blue);" class="my-5">
+
+        <section id="testi" class="py-5" style="background-color: #0d0d0d;">
+            <div class="container">
+                <h2 class="text-center mb-5 fw-bold" style="color: var(--neon-pink); font-family: 'Teko', sans-serif; letter-spacing: 3px;">🗣 CROWD REVIEW</h2>
+                
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-6">
+                        <div class="testimonial-card p-4 rounded shadow h-100">
+                            <p class="testimonial-text lead">"Kualitas merchandise sangat TOP! Pengiriman cepat, terasa seperti mendapatkan 'early bird ticket' untuk gaya terbaik. Sangat merekomendasikan!"</p>
+                            <div class="star-rating my-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="fw-bold mb-0" style="color: var(--neon-blue);">Rina S. (VIP Holder)</p>
+                            <small class="text-muted">Attendee sejak 2020</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="testimonial-card p-4 rounded shadow h-100">
+                            <p class="testimonial-text lead">"Setiap rilisan produknya seperti 'single' yang hits. Desainnya minimalis, cocok untuk 'all-nighter' party. Pilihan tiket juga lengkap!"</p>
+                            <div class="star-rating my-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                            <p class="fw-bold mb-0" style="color: var(--neon-blue);">Andi P. (Media Pass)</p>
+                            <small class="text-muted">Pembeli Last Hour Heroes</small>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="text-center mt-5">
+                    <a href="testi.html" class="btn btn-outline-light btn-lg" style="border-color: var(--neon-pink); color: var(--neon-pink);">
+                        Lihat Lebih Banyak Review <i class="fas fa-comment-dots ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <hr style="border-top: 2px dashed var(--neon-pink);" class="my-5">
+
+        <section id="kontak" class="container my-5 py-3">
+            <h2 class="text-center mb-4 fw-bold" style="color: var(--neon-blue); font-family: 'Teko', sans-serif; letter-spacing: 3px;">🎫 DAFTAR EARLY ACCESS TICKET</h2>
+            <p class="text-center mb-5 text-muted">Dapatkan akses pre-sale dan diskon eksklusif sebelum orang lain.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-4">
+                    <h4 class="mb-3" style="color: var(--neon-pink);">Daftar Presale</h4>
+                    <form onsubmit="alert('Terima kasih, Anda sudah terdaftar untuk Early Access Ticket!'); return false;">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control form-control-lg bg-dark text-white" placeholder="Email untuk Early Access" required style="border: 1px solid var(--neon-pink);">
+                            <button class="btn btn-neon btn-lg" type="submit">Daftar VIP List</button>
+                        </div>
+                        <div class="form-text text-white">Akses ke rilisan koleksi terbatas dan promo kilat.</div>
+                    </form>
+                </div>
+                <div class="col-md-6 mb-4 ps-md-5">
+                    <h4 class="mb-3" style="color: var(--neon-blue);">Informasi Penyelenggara</h4>
+                    <ul class="list-unstyled text-white">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2" style="color: var(--neon-pink);"></i> Venue Lokasi Utama: Jl. Industri Blok A No. 12, Jakarta Utara</li>
+                        <li class="mb-2"><i class="fas fa-headset me-2" style="color: var(--neon-pink);"></i> Ticketing Hotline: +62 21 8000 1234</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2" style="color: var(--neon-pink);"></i> Email Support: support@the-music-fest.com</li>
+                        <li class="mb-2"><i class="fab fa-whatsapp me-2" style="color: var(--neon-pink);"></i> VIP Contact: +62 812 3456 7890</li>
+                    </ul>
+                    <a href="kontak.html" class="btn btn-sm btn-outline-light mt-3" style="border-color: var(--neon-blue); color: var(--neon-blue);">Lihat Semua Info</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+ <footer class="text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-pink);">THE MUSIC FEST</h5>
+                    <p class="small text-white me-3">Your definitive style concert. Where quality and high-energy fashion meet.</p>
+                    <div class="d-flex social-icons mt-3">
+                        <a href="#" class="me-3" onclick="alert('Membuka Facebook Event')"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka Instagram Event')"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka Twitter Event')"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka YouTube Channel')"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-blue);">Event Info</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="tentang.html" class="text-white me-3">Venue Info</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Karir')">Staff & Crew</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Blog')">After Party Blog</a></li>
+                        <li><a href="kontak.html" class="text-white me-3">Hotline</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-pink);">Ticket Policy</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Kebijakan Pengiriman')">Merchandise Shipping</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Pengembalian')">Refund Policy</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman FAQ')">FAQ</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Syarat & Ketentuan')">T&C</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-blue);">Payment Gate</h5>
+                    <p class="small text-white me-3">Semua transaksi dijamin aman dan terenkripsi.</p>
+                </div>
+            </div>
+            <div class="text-center pt-3 border-top border-secondary mt-3">
+                <p class="mb-0 small text-muted">&copy; 2024 THE MUSIC FEST. All Rights Reserved. Powered by Electric Vibes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

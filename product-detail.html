@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Tiket - VIP BACKSTAGE PASS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-bg: #111111;
+            --dark-card: #1e1e1e;
+            --neon-pink: #ff3366;
+            --neon-blue: #00ffff;
+            --text-light: #f0f0f0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Navbar (Menggunakan style dari index.html) */
+        .navbar {
+            background-color: var(--dark-bg) !important;
+            border-bottom: 1px solid var(--neon-pink);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--text-light) !important;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--neon-pink) !important;
+        }
+        .btn-neon {
+            background-color: var(--neon-pink);
+            border-color: var(--neon-pink);
+            color: var(--dark-bg);
+            font-weight: bold;
+            box-shadow: 0 0 10px var(--neon-pink);
+            transition: all 0.3s;
+        }
+        .btn-neon:hover {
+            background-color: #ff6699;
+            border-color: #ff6699;
+            box-shadow: 0 0 15px #ff6699;
+        }
+        
+        /* Detail Section Styles */
+        .detail-card {
+            background-color: var(--dark-card);
+            border: 3px solid var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        .detail-title {
+            color: var(--neon-pink);
+            font-family: 'Teko', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+        .price-tag {
+            color: var(--neon-blue);
+            font-family: 'Teko', sans-serif;
+            font-size: 4rem;
+        }
+        .feature-list i {
+            color: var(--neon-pink);
+            margin-right: 10px;
+        }
+        .review-section {
+            border-top: 2px dashed var(--neon-pink);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+        .review-item {
+            border-left: 3px solid var(--neon-blue);
+            padding-left: 1rem;
+        }
+        .star-rating i {
+            color: gold;
+            text-shadow: 0 0 5px orange;
+        }
+
+        /* Footer (Menggunakan style dari index.html) */
+        footer {
+            background-color: var(--dark-bg);
+            border-top: 3px solid var(--neon-pink);
+        }
+        footer a {
+            color: var(--neon-blue) !important;
+        }
+        footer a:hover {
+            color: var(--neon-pink) !important;
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-2 text-white" href="index.html" style="color: var(--neon-pink) !important; text-shadow: 0 0 5px var(--neon-pink);">
+                THE FASHION FEST
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME STAGE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="katalog.html">LINEUP</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">VENUE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testi.html">CROWD REVIEW</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">INFO TIKET</a></li>
+                </ul>
+            </div>
+            <div class="d-flex">
+                <button class="btn btn-outline-light me-2" type="button" title="Cari Merchandise"
+                        onclick="alert('Mencari LINEUP/MERCHANDISE. Silakan integrasikan dengan backend.')">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="checkout.html" class="btn btn-neon position-relative" title="Keranjang Merchandise">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                        <span class="visually-hidden">items in cart</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container my-5">
+        <section id="product-detail">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <a href="index.html" class="text-white mb-4 d-block" style="color: var(--neon-blue) !important; text-decoration: none;">
+                        <i class="fas fa-arrow-left me-2"></i> Kembali ke Lineup
+                    </a>
+                    <div class="detail-card">
+                        <div class="row">
+                            <div class="col-md-5 mb-4 mb-md-0">
+                                <div class="bg-dark p-3 rounded text-center h-100 d-flex align-items-center justify-content-center" style="border: 2px dashed var(--neon-pink);">
+                                    <div class="p-4">
+                                        <i class="fas fa-ticket-alt fa-5x mb-3" style="color: var(--neon-blue);"></i>
+                                        <h3 class="text-white-50">Tiket Fisik Eksklusif</h3>
+                                        <p class="small text-muted">Akses penuh ke semua sesi, 3 hari.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <h1 class="detail-title fw-bold">VIP BACKSTAGE PASS</h1>
+                                <p class="lead text-white-50">Nikmati pengalaman festival fashion dari sisi eksklusif. Tiket terbaik untuk penggemar sejati.</p>
+
+                                <div class="price-section my-4">
+                                    <span class="price-tag fw-bold">Rp 245.000</span>
+                                    <span class="text-white-50 ms-3">(Per Hari/Per Orang)</span>
+                                </div>
+
+                                <h5 class="text-white mb-3 mt-4"><i class="fas fa-star me-2" style="color: var(--neon-pink);"></i> Fitur Eksklusif</h5>
+                                <ul class="list-unstyled feature-list text-white-75">
+                                    <li><i class="fas fa-check-circle"></i> Akses ke VIP Backstage Lounge</li>
+                                    <li><i class="fas fa-check-circle"></i> Sesi Meet & Greet eksklusif dengan 2 Desainer Utama</li>
+                                    <li><i class="fas fa-check-circle"></i> Front Row Seat (Kursi Barisan Depan) di Stage Utama</li>
+                                    <li><i class="fas fa-check-circle"></i> Merchandise Kit Premium (T-Shirt & Tote Bag)</li>
+                                    <li><i class="fas fa-check-circle"></i> Jalur Cepat (Fast Track) untuk semua pintu masuk</li>
+                                </ul>
+
+                                <div class="d-flex align-items-center mt-5">
+                                    <input type="number" class="form-control me-3 bg-dark text-white" value="1" min="1" style="width: 100px; border-color: var(--neon-blue);">
+                                    <button class="btn btn-neon btn-lg w-75 fw-bold" onclick="alert('Tiket VIP telah ditambahkan ke Keranjang!')">
+                                        <i class="fas fa-shopping-cart me-2"></i> Tambah ke Keranjang
+                                    </button>
+                                </div>
+                                <p class="small text-muted mt-2">Stok terbatas. Hanya tersedia 500 tiket.</p>
+                            </div>
+                        </div>
+
+                        <div class="review-section">
+                            <h4 class="text-center mb-4 detail-title" style="font-size: 2rem;">Apa Kata Crowd?</h4>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="review-item p-3">
+                                        <div class="star-rating mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        <p class="mb-1 small text-white">"Pengalaman terbaik! Bertemu langsung dengan designer idola saya. Worth the price!"</p>
+                                        <small class="text-muted">Anya L. - 2024</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="review-item p-3">
+                                        <div class="star-rating mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                                        <p class="mb-1 small text-white">"Lounge-nya nyaman, kursinya pas di depan panggung. Tapi antrian Merchandise Kit-nya agak panjang."</p>
+                                        <small class="text-muted">Dani P. - 2023</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="testi.html" class="text-white-50 small" style="color: var(--neon-blue) !important; text-decoration: none;">Lihat Semua 25 Review</a>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-pink);">THE FASHION FEST</h5>
+                    <p class="small text-white me-3">Your definitive style concert. Where quality and high-energy fashion meet.</p>
+                    <div class="d-flex social-icons mt-3">
+                        <a href="#" class="me-3" onclick="alert('Membuka Facebook Event')"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka Instagram Event')"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka Twitter Event')"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="me-3" onclick="alert('Membuka YouTube Channel')"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-blue);">Event Info</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="tentang.html" class="text-white me-3">Venue Info</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Karir')">Staff & Crew</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Blog')">After Party Blog</a></li>
+                        <li><a href="kontak.html" class="text-white me-3">Hotline</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-pink);">Ticket Policy</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Kebijakan Pengiriman')">Merchandise Shipping</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman Pengembalian')">Refund Policy</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Halaman FAQ')">FAQ</a></li>
+                        <li><a href="#" class="text-white me-3" onclick="alert('Membuka Syarat & Ketentuan')">T&C</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold" style="color: var(--neon-blue);">Payment Gate</h5>
+                    <p class="small text-white me-3">Semua transaksi dijamin aman dan terenkripsi.</p>
+                    <div class="mt-3">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-3 border-top border-secondary mt-3">
+                <p class="mb-0 small text-muted">&copy; 2024 THE FASHION FEST. All Rights Reserved. Powered by Electric Vibes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
